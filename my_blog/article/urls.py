@@ -7,5 +7,6 @@ from views import HomeView, DetailView
 
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name="home"),
+
     url(r'^(?P<article_id>\d+)/$', DetailView.as_view(), name='detail'),
 ]

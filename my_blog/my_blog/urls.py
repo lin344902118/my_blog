@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 """my_blog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -20,7 +21,10 @@ import xadmin
 from users.views import IndexView
 
 urlpatterns = [
+    #xadmin后台管理
     url(r'^xadmin/', xadmin.site.urls),
+    #首页
     url(r'^$', IndexView.as_view(), name="index"),
+    #文章
     url(r'^article/', include('article.urls', namespace='article')),
 ]
