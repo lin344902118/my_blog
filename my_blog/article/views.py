@@ -3,7 +3,7 @@ from django.views.generic.base import View
 from models import Article
 
 # Create your views here.
-class IndexView(View):
+class HomeView(View):
     def get(self, request):
         articles = Article.objects.all()
         return render(request, 'home.html', {'post_list': articles})

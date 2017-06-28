@@ -21,3 +21,16 @@ class UserProfile(AbstractUser):
     class Meta:
         verbose_name = u'用户信息'
         verbose_name_plural = verbose_name
+
+
+class LeaveMessage(models.Model):
+    name = models.CharField(max_length=20, verbose_name=u'姓名')
+    email = models.EmailField(max_length=50, verbose_name=u'邮箱')
+    message = models.CharField(max_length=200, verbose_name=u'留言')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = u'留言表'
+        verbose_name_plural = verbose_name

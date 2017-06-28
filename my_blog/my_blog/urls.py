@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 import xadmin
-import article
+
+from users.views import IndexView
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
+    url(r'^$', IndexView.as_view(), name="index"),
     url(r'^article/', include('article.urls', namespace='article')),
 ]

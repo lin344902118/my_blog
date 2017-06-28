@@ -1,0 +1,135 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<!--
+	Highlights by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Highlights by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="{% static 'assets/js/ie/html5shiv.js' %}"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="{% static 'assets/css/ie8.css' %}" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="{% static 'assets/css/ie9.css' %}" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<section id="header">
+				<header class="major">
+					<h1>博客首页</h1>
+					<p>一个简单的个人博客</p>
+				</header>
+				<div class="container">
+					<ul class="actions">
+						<li><a href="/article" class="button special scrolly">进入博客</a></li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="{% static 'images/pic01.jpg' %}" alt="" /></span>
+					<div class="content">
+						<header class="major">
+							<h2>网站简介</h2>
+						</header>
+						<p>该网站是Python的Django框架开发，集成了xadmin，django-simple-captcha，django-pure-pagination等中间件的一个简单的个人博客系统(尚未完成)</p>
+					</div>
+{#					<a href="#two" class="goto-next scrolly">Next</a>#}
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="{% static 'images/pic02.jpg' %}" alt="" /></span>
+					<div class="content">
+						<header class="major">
+							<h2>功能介绍</h2>
+						</header>
+						<p></p>
+						<ul class="icons-grid">
+							<li>
+								<span class="icon major fa-camera-retro"></span>
+								<h3>图片上传</h3>
+							</li>
+							<li>
+								<span class="icon major fa-pencil"></span>
+								<h3>编写博客</h3>
+							</li>
+							<li>
+								<span class="icon major fa-code"></span>
+								<h3>markdown及代码高亮</h3>
+							</li>
+							<li>
+								<span class="icon major fa-coffee"></span>
+								<h3>评论博客</h3>
+							</li>
+						</ul>
+					</div>
+{#					<a href="#three" class="goto-next scrolly">Next</a>#}
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="{% static 'images/pic03.jpg' %}" alt="" /></span>
+					<div class="content">
+						<header class="major">
+							<h2>流程介绍</h2>
+						</header>
+						<p>进入主页，点击进入博客，即查看作者编写的博客，并可留下评论</p>
+					</div>
+					<a href="#footer" class="goto-next scrolly">Next</a>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<header class="major">
+						<h2>更多建议</h2>
+					</header>
+					<form method="post" action="/" id="leaveMessage">
+						<div class="row uniform">
+							<div class="6u 12u"><input type="text" name="name" id="name" placeholder="姓名" /></div>
+							<div class="6u 12u"><input type="email" name="email" id="email" placeholder="Email" /></div>
+							<div class="12u"><textarea name="message" id="message" placeholder="留言" rows="4"></textarea></div>
+                            <div class="12u"><h3 style="color: red">{% if response %}{{ response }}{% endif %}</h3></div>
+							<div class="12u">
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="special" /></li>
+								</ul>
+							</div>
+						</div>
+                        {% csrf_token %}
+					</form>
+				</div>
+				<footer>
+					<ul class="icons">
+						<li><a href="https://github.com/lin344902118">github地址</a></li>
+						<li><a href="http://www.cnblogs.com/lgh344902118">博客园地址</a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Demo Images: <a href="http://unsplash.com">Unsplash</a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="{% static 'assets/js/ie/respond.min.js' %}"></script><![endif]-->
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>
