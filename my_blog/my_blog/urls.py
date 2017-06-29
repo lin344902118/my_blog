@@ -15,16 +15,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-from django.contrib import admin
+from django.views.static import serve #处理静态文件
 import xadmin
 
-from users.views import IndexView
+from users.views import IndexView, LogoutView
+from settings import MEDIA_ROOT
 
 urlpatterns = [
     #xadmin后台管理
     url(r'^xadmin/', xadmin.site.urls),
     #首页
     url(r'^$', IndexView.as_view(), name="index"),
+    #退出登录
+    url(r'^logout$', LogoutView.as_view(), name='logout'),
     #文章
     url(r'^article/', include('article.urls', namespace='article')),
+    # 配置上传文件的访问处理函数
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
 ]
